@@ -86,17 +86,17 @@ def longest_substring_without_repeating_characters(text):
     print(mx)
     return mx
 
-def longest_substring_without_repeating_characters_optimized(text):
-    length = len(text)
+def longest_substring_without_repeating_characters_optimized(txt):
+    length = len(txt)
     left = 0
     mx = 0
     seen = set()
 
     for right in range(length):
-        while text[right] in seen:
-            seen.remove(text[left])
+        while txt[right] in seen:
+            seen.remove(txt[left])
             left += 1
-        seen.add(text[right])
+        seen.add(txt[right])
         mx = max(mx, right - left + 1)
     print(mx)
     return mx
